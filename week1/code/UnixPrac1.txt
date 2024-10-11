@@ -1,0 +1,15 @@
+# 1. Count the number of lines in each file
+wc -l *.fasta
+
+# 2. Print everything from the second line of the E. coli genome
+tail -n +2 *coli*.fasta
+
+# 3. Calculate the sequence length of the E. coli genome
+tail -n +2 *coli*.fasta | tr -d '\n' | wc -c
+
+# 4. Count the number of matches for "ATGC" in the E. coli genome
+tail -n +2 *coli*.fasta | tr -d '\n' | grep -o "ATGC" | wc -l
+
+# 5. Calculate AT/GC ratio
+tail -n +2 *coli*.fasta | tr -d '\n' | 
+awk '{print (gsub(/A|T/,""))/(gsub(/G|C/,""))}'
