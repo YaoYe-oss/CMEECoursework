@@ -13,7 +13,7 @@ This is a union Python learning and practicing database, which contains python s
 Python
 
 ## Dependencies ##
-Python modules: csv, sys, doctest
+Python modules: csv, sys, doctest, re, os, difflib
 
 ## Installation ##
 To use scripts you can clone the repository:
