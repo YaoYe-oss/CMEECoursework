@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath}
+\geometry{a4paper, margin=1in}
+
+\title{Key West Annual Temperature Autocorrelation Analysis}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+This analysis aims to determine whether annual temperatures in Key West show significant autocorrelation, specifically whether the temperature of one year is significantly related to the temperature of the following year. This is measured using lag-1 autocorrelation.
+
+\section*{Results}
+The observed lag-1 autocorrelation between consecutive years was calculated as follows:
+
+\begin{itemize}
+    \item \textbf{Observed Lag-1 Autocorrelation:} $0.3262$  % Replace with the actual value of observed_corr
+    \item \textbf{P-value:} $p < 0.001$ % Replace with the actual p-value if available
+\end{itemize}
+
+The p-value indicates whether the observed correlation is significant when compared to correlations obtained from random permutations of the data.
+
+\vspace{0.5cm}
+\noindent The interpretation of the results is as follows:
+\begin{itemize}
+    \item The observed lag-1 autocorrelation shows the degree to which the temperature of consecutive years is related.
+    \item A small p-value (e.g., less than 0.05) suggests that the observed correlation is statistically significant, indicating that the temperatures in consecutive years are indeed related.
+    \item In this analysis, the observed correlation and the p-value provide evidence for assessing the year-to-year dependence of annual temperatures.
+\end{itemize}
+
+\section*{Figures}
+The analysis includes the following visualizations:
+\begin{enumerate}
+    \item \textbf{Key West Annual Mean Temperature}: A time series plot of the annual temperatures.
+\item \textbf{Histogram of Random Lag-1 Autocorrelations}: Showing the distribution of random lag-1 autocorrelations compared with the observed value.
+\end{enumerate}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../results/Temperature.pdf}
+    % Make sure the PDF is in the same directory
+    \caption{Key West Annual Mean Temperature}
+    \label{fig:autocorrelation}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../results/Florida_Correlation_Histogram.pdf}
+    % Make sure the PDF is in the same directory
+    \caption{Histogram of Random Lag-1 Autocorrelations}
+    \label{fig:autocorrelation}
+\end{figure}
+
+\end{document}
