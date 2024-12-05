@@ -10,10 +10,10 @@ Shell, LaTeX, Python, R
 LaTeX packeges: graphicx, geometry, amsmath
 
 
-R packages: minpack.lm, ggplot2, maps, tidyvere, dplyr
+R packages: ggplot2, maps, tidyvere, dplyr
 
 
-Python modules: scipy, numpy, matplotlib.pylab, sys, csv, pandas, doctest
+Python modules: sys, csv, doctest
 
 ## Installation
 Please download all of the files in a suitable directory.
