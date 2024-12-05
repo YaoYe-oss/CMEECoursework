@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: .Yao Ye yy6024@ic.ac.uk
+# Author: Yao Ye yy6024@ic.ac.uk
 # Script: tiff2png.sh
 # Description: convert tiff file to png file
 #
