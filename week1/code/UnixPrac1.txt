@@ -1,0 +1,32 @@
+#!/bin/bash
+# Author: Yao Ye yy6024@ic.ac.uk
+# Script: UnixPrac1.txt
+# Description: fasta practices using unix shell commands
+#
+# Print the output on the screen
+# Arguments: call the fasta file from ../data dictionary
+# Date: Oct 2024
+
+#1
+wc -l ../data/E.coli.fasta ../data/407228326.fasta ../data/407228412.fasta
+#count lines in each fasta file
+
+#2
+cat ../data/E.coli.fasta | sed 1d
+#print E.coli.fasta from the second line
+
+#3
+cat ../data/E.coli.fasta | sed 1d |  tr -d "\n" | wc -c 
+#count the E.coli.fasta sequence length
+
+#4
+cat ../data/E.coli.fasta | sed 1d | tr -d "\n" | grep -o "ATGC" | wc -l
+#open E.coli.fasta, delete the first line, delete newline character, match "ATGC" ang then count the line
+
+#5
+echo "scale=20; $(cat ../data/E.coli.fasta | sed 1d | grep -oE "A|T" | wc -l) / $(cat ../data/E.coli.fasta | sed 1d | grep -oE "C|G" | wc -l)" | bc
+#use bc to calculater the ratio, the relative number of A|T and G|C is counted by wc after deleting the first line and matching by grep
+
+#or
+#a=$(cat ../data/E.coli.fasta | sed 1d | grep -oE "A|T" | wc -l) | b=$(cat ../data/E.coli.fasta | sed 1d | grep -oE "C|G" | wc -l) | echo "scale=20; $a / $b"| bc
+#print the fasta file, delete the first line, match A|T, use wc count number and give the number to a, the same as number of C|G to b, then use bc to calculate the ratio
