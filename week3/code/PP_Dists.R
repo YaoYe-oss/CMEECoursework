@@ -26,7 +26,7 @@ hist(log(predacious.piscivorous$Predator.mass), xlab = "log(Predator Mass (g))",
 graphics.off()
 
 # draw Prey_Subplots.pdf
-pdf("../result/Prey_Subplots.pdf")
+pdf("../results/Prey_Subplots.pdf")
 par(mfcol=c(5,1))
 par(mfg = c(1,1))
 hist(log(insectivorous$Prey.mass), xlab = "log(Prey Mass (g))", ylab = "Count", main = "insectivorous")
