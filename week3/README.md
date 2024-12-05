@@ -38,13 +38,12 @@ Please download all of the files in a suitable directory.
 - Girko.R: draw the results of a simulation displaying Girko's circular law
 - MyBars.R: use ggplot geom_text to annotate a plot
 - plotLin.R: mathematical annotation on a axis and in the plot area
-
+- PP_Dists.R: draw and save 3 graphics relatively for distribution of log(Predator mass), log(Prey mass) and the size ratio of Prey mass over Predator mass, containing subplots by Type.of.feeding.interaction
 
 ### Data
-- EcolArchives-E089-51-D1.csv: import file of PP_Dists.R and PP_Regress.R
-- PoundHillData.csv: import file of DataWrang.R and DataWrangTidy.R
-- PoundHillMetaData.csv: import file of DataWrang.R and DataWrangTidy.R
-
+- EcolArchives-E089-51-D1.csv: import file of PP_Dists.R
+- PoundHillData.csv: import file of DataWrang.R 
+- PoundHillMetaData.csv: import file of DataWrang.R
 ### Result
 An empty directory as origin version only with a .gitignore.
 
