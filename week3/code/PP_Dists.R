@@ -15,7 +15,7 @@ predacious <- subset(MyDF,Type.of.feeding.interaction=="predacious")
 predacious.piscivorous <- subset(MyDF,Type.of.feeding.interaction=="predacious/piscivorous")
 
 # draw Pred_Subplots.pdf
-pdf("../result/Pred_Subplots.pdf")
+pdf("../results/Pred_Subplots.pdf")
 par(mfcol=c(5,1))
 par(mfg = c(1,1))
 hist(log(insectivorous$Predator.mass), xlab = "log(Predator Mass (g))", ylab = "Count", main = "insectivorous")
@@ -37,7 +37,7 @@ hist(log(predacious.piscivorous$Prey.mass), xlab = "log(Prey Mass (g))", ylab = 
 graphics.off()
 
 # draw SizeRatio_Subplots.pdf
-pdf("../result/SizeRatio_Subplots.pdf")
+pdf("../results/SizeRatio_Subplots.pdf")
 par(mfcol=c(5,1))
 par(mfg = c(1,1))
 hist(log(insectivorous$Prey.mass/insectivorous$Predator.mass), xlab = "log(Prey mass / Predator Mass)", ylab = "Count", main = "insectivorous")
@@ -73,6 +73,6 @@ total <- cbind(log.predmass.mean, log.predmass.median, log.preymass.mean, log.pr
 total <- cbind(Type.of.feeding.interaction=row.names(total),total)
 
 # export means and medians to a csv file
-write.csv(total, "../result/PP_Results.csv", row.names = F)
+write.csv(total, "../results/PP_Results.csv", row.names = F)
 
 
