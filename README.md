@@ -13,7 +13,7 @@ LaTeX packeges: graphicx, geometry, amsmath
 R packages: ggplot2, readr, tidyr, dplyr
 
 
-Python modules: sys, csv, doctest
+Python modules: sys, csv, doctest, re, os, difflib
 
 ## Installation
 Please download all of the files in a suitable directory.
