@@ -10,7 +10,7 @@ Shell, LaTeX, Python, R
 LaTeX packeges: graphicx, geometry, amsmath
 
 
-R packages: ggplot2, maps, tidyvere, dplyr
+R packages: ggplot2, readr, tidyr, dplyr, base
 
 
 Python modules: sys, csv, doctest
