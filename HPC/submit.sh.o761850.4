@@ -1,0 +1,128 @@
+R about the stochastic model is about to run.
+
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # CMEE 2024 HPC exercises R code pro forma
+> # For stochastic demographic model cluster run
+> 
+> # Clear workspace and turn off graphics
+> rm(list=ls())
+> graphics.off()
+> 
+> # Load functions from the provided R script
+> source("/rds/general/user/yy6024/home/Demographic.R")
+> 
+> # Retrieve job number from HPC cluster
+> iter <- as.numeric(Sys.getenv("PBS_ARRAY_INDEX"))
+> 
+> # Set random seed for reproducibility
+> set.seed(iter)
+> 
+> state_initialise_adult <- function(num_stages, initial_size) {
++   # Create a vector with all zeros and a length of num_dages
++   state <- rep(0, num_stages)
++   # Assign the last position as' initialize size '
++   state[num_stages] <- initial_size
++   return(state)
++ }
+> state_initialise_spread <- function(num_stages, initial_size) {
++   # Calculate the basic allocation for each stage
++   base_count <- floor(initial_size / num_stages)
++   # Calculate the excess number of people
++   remainder <- initial_size %% num_stages
++   # Create an initial vector consisting entirely of base_comunt
++   state <- rep(base_count, num_stages)
++   # Allocate the remaining people, starting from the first stage
++   state[1:remainder] <- state[1:remainder] + 1
++   return(state)
++ }
+> sum_vect <- function(x, y) {
++   # Determine the lengths of both vectors
++   len_x <- length(x)
++   len_y <- length(y)
++   
++   # Find the maximum length
++   max_len <- max(len_x, len_y)
++   
++   # Pad the shorter vector with zeros
++   x <- c(x, rep(0, max_len - len_x))
++   y <- c(y, rep(0, max_len - len_y))
++   
++   # Return element-wise sum
++   return(x + y)
++ }
+> # Define projection matrix (same as previous questions)
+> growth_matrix <- matrix(c(0.1, 0.0, 0.0, 0.0,
++                           0.5, 0.4, 0.0, 0.0,
++                           0.0, 0.4, 0.7, 0.0,
++                           0.0, 0.0, 0.25, 0.4),
++                         nrow=4, ncol=4, byrow=TRUE)
+> 
+> reproduction_matrix <- matrix(c(0.0, 0.0, 0.0, 2.6,
++                                 0.0, 0.0, 0.0, 0.0,
++                                 0.0, 0.0, 0.0, 0.0,
++                                 0.0, 0.0, 0.0, 0.0),
++                               nrow=4, ncol=4, byrow=TRUE)
+> 
+> # Define clutch distribution
+> clutch_distribution <- c(0.06, 0.08, 0.13, 0.15, 0.16, 0.18, 0.15, 0.06, 0.03)
+> 
+> # Assign initial conditions based on `iter`
+> if (iter >= 1 & iter <= 25) {
++   initial_state <- state_initialise_adult(num_stages=4, initial_size=100)
++ } else if (iter >= 26 & iter <= 50) {
++   initial_state <- state_initialise_adult(num_stages=4, initial_size=10)
++ } else if (iter >= 51 & iter <= 75) {
++   initial_state <- state_initialise_spread(num_stages=4, initial_size=100)
++ } else {
++   initial_state <- state_initialise_spread(num_stages=4, initial_size=10)
++ }
+> 
+> # Set simulation length to 120 time steps (10 years)
+> simulation_length <- 120
+> 
+> # Create an empty list to store 150 simulation results
+> results_list <- vector("list", 150)
+> 
+> # Run 150 stochastic simulations
+> for (i in 1:150) {
++   results_list[[i]] <- stochastic_simulation(initial_state, 
++                                              growth_matrix, 
++                                              reproduction_matrix, 
++                                              clutch_distribution, 
++                                              simulation_length)
++ }
+> 
+> # Save results to a unique file to avoid overwriting
+> save(results_list, file=paste0("stochastic_results_", iter, ".rda"))
+> 
+> 
+> 
+No output files found.
+R (stochastic model) has finished running.
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :         1             1
+ Used       :         0 (peak)   0.90 (ave)
+
+============================================

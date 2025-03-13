@@ -1,0 +1,45 @@
+load("/Users/yeyao/Desktop/HPC/stochastic_results_11.rda")
+ls
+ls()
+str(results_list)
+load("/Users/yeyao/Desktop/HPC/stochastic_results_11.rda")
+load("/Users/yeyao/Desktop/HPC/stochastic_results_1.rda")
+str(simu_results)
+ls
+ls()
+load("/Users/yeyao/Desktop/HPC/my_test_file_1.rda")
+ls()
+load("/Users/yeyao/Desktop/HPC/my_test_file_1.rda")
+ls()
+load("/Users/yeyao/Desktop/HPC/stochastic_results_1.rda")
+ls()
+load("/Users/yeyao/Desktop/HPC/population_size_df.rda")
+ls()
+str(population_size_df)  # 检查数据框的结构#
+dim(population_size_df)  # 输出行数和列数#
+colnames(population_size_df)  # 输出列名
+load("/Users/yeyao/Desktop/HPC/population_size_df.rda")
+str(population_size_df)  # 检查数据框的结构#
+dim(population_size_df)  # 输出行数和列数#
+colnames(population_size_df)  # 输出列名
+load("/Users/yeyao/Desktop/HPC/population_size_df.rda")
+str(population_size_df)
+load("/Users/yeyao/Desktop/HPC/stochastic_results_11.rda")
+str
+dim
+colnames
+load("/Users/yeyao/Desktop/HPC/stochastic_results_11.rda")
+load("/Users/yeyao/Desktop/HPC/stochastic_results_1.rda")
+ls()
+load("/Users/yeyao/Desktop/HPC/population_size_df.rda")
+ls()
+load("/Users/yeyao/Desktop/HPC/simulation_output_1.rda")
+ls()
+print(neutral_cluster_run)
+grep -rnw . -e "neutral_cluster_run"
+print(script_name)#
+print(session_info)
+load("/Users/yeyao/Desktop/HPC/processed_results.rda")
+ls()
+load("/Users/yeyao/Desktop/HPC/processed_results.rda")
+ls()
