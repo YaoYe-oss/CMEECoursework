@@ -1,0 +1,83 @@
+HPC long practical feedback for Yao ( Yao Ye ) 2025
+ 
+email : yy6024@imperial.ac.uk
+username : yy6024
+ 
+Your final mark is : 86.32 %
+ 
+Mark allocation break down
+1) Technically correct answers to all questions worth 60 % of final grade
+Your mark :  58.4 /60
+2) Quality of free text answers worth 8 % of final grade
+Your mark :  5.2 /8
+3) Quality of graphical outputs worth 8 % of final grade
+Your mark :  8.5 /10
+4) Quality of code worth 8 % of final grade
+Your mark :  4 /8
+5) Answers to challenge questions worth 16 % of final grade
+Your mark :  10 /14
+ 
+Marks for main questions
+Q 0 :    3 / 3    comments: state_initialise_spread(num_stages = 7,initial_size = 21) returns ( 4,3,3,3,3,3,3 ) not (3,3,3,3,3,3,3) which would be expected
+Q 1 :    3 / 4    comments: good point about the long-term dynamics but in the short term the graph shows the opposite of what's been described and explained here.
+Q 2 :    3 / 3
+Q 3 :    10 / 10
+Q 4 :    10 / 10
+Q 5 :    8 / 8
+Q 6 :    10 / 10
+Q 7 :    2 / 2
+Q 8 :    1 / 1
+Q 9 :    1 / 1
+Q 10 :    2 / 2
+Q 11 :    2 / 2
+Q 12 :    2 / 2
+Q 13 :    2 / 2
+Q 14 :    3 / 3
+Q 15 :    3 / 3
+Q 16 :    1 / 1
+Q 17 :    1 / 1
+Q 18 :    3 / 4    comments: text answer was along the right lines but had a few slips in it - e.g. fluctuations are not *always* within a range it's just most of the time. Also, it's not clear what discrimination in the community means.  Would have been nice to mention dynamic equilibrium
+Q 19 :    3 / 3
+Q 20 :    3 / 3
+Q 21 :    2 / 2
+Q 22 :    4 / 4
+Q 23 :    6 / 6
+Q 24 :    6 / 6
+Q 25 :    10 / 10
+Q 26 :    9 / 10    comments: it's all correct on the simulation and graphing but doesn't use the personal speciation rate given in classes.
+          ---------
+Total     113 / 116
+          ---------
+ 
+Marks for text quality :  5.2 /8
+Comments...
+In question 1 text shows understanding in some ways but unfortunately gets the main distinction around the wrong way.
+In question 2 excellent
+In question 5 very good, shows excellent understanding but the quality of the scientific english itself could have been improved and honed a bit more.
+In question 6 shows excellent understanding but written with awkward scientific English
+In question 14 has understanding but not well worded
+In question 18 there is understanding underneath this but the quality of the language is quite poor and it's not so clear because of this.
+In question 22 good but could have been clearer. Would have been nice to mention dynamic equilibrium in the answer
+ 
+Marks for graphics quality :  8.5 /10
+Comments...
+In question 1 very good but it's a shame the legend overlaps the data
+In question 2 same comment as before, legend overlaps data
+In question 5 excellent
+In question 6 excellent, only very minor point is that I'd prefer no box on the legend
+In question 14 exemplary
+In question 18 data cut off on the y axis because limits set wrongly
+In question 22 would have been nice to explicitly label the octaves, otherwise very good
+In question 26 would have been nice to fully label the octaves (1,2-3,4-7 and so on)
+ 
+Marks for code quality :  4 /8
+Comments...
+some useful comments, but many other style errors and bugs. i) Delay when sourcing the main file  - runs lots of code wrongly when should only define the functions ideally. ii) Missing } on process_neutral_cluster_results iii) Sum_vect defined wrongly inside Q2 - needed global definition earlier in the file iv) Inappropriate filenames e.g. submit.sh and submit_jobs.sh say nothing about whether it’s neutral or demographic simulations. v) Uses dplyr which was not needed and the instructions called for ggplot and base R only vi) Pathing was specific to personal computer not generic as requested. vii) Challenge B took ages to run, this was supposed to be avoided by using precalculated data files.
+ 
+Marks for challenge questions :  10 /14
+Comments...
+very good, though I'd prefer axes to grid on the graph output. Also, some issue in getting this to run because paths were not generic and portable as was ideally expected.
+challenge question B, very good, but tweak the x axis and reconsider the time to equilibrium because zero is definitely not correct.
+a good attempt but a few issues, it takes a long time to run and (with my test at least) doesn't output a graph a the end.  The handed in graph is along the right lines but doesn't appear to contain a range of starting richnesses and focuses on too wide a time scale instead of zooming in on the approach to equilibrium
+challenge question D, excellent answer - lots of attention to detail on the graph and clever attempt to detect equilibrium though it's still an over-estimate.
+challenge question E, brilliant work, would be nice to clean up the legend and octave labels on the graph but that's all I can think to suggest in the way of improvements.
