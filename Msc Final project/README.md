@@ -82,27 +82,28 @@ Msc Final project/
   install.packages(c("tidyverse", "minpack.lm", "patchwork", "readxl", "forcats"))
 
 ### 2. Running the scripts
-Both scripts assume the working directory is code/ (because they read ../data/...).
-From command line:
-```r
-cd "Msc Final project/code"
-Rscript "pH-growth rate results analysis.R"
-Rscript "pH-growth rate parameters analysis.R"
+- Both scripts assume the working directory is code/ (because they read ../data/...).
+  From command line:
+   ```r
+  cd "Msc Final project/code"
+  Rscript "pH-growth rate results analysis.R"
+  Rscript "pH-growth rate parameters analysis.R"
 
-From R / RStudio:
-```r
-setwd("Msc Final project/code")
-source("pH-growth rate results analysis.R")
-source("pH-growth rate parameters analysis.R")
+- From R / RStudio:
+  ```r
+  setwd("Msc Final project/code")
+  source("pH-growth rate results analysis.R")
+  source("pH-growth rate parameters analysis.R")
 
 ### 3. Outputs
-CSV logs and plots are saved to the current working directory (default: code/).
-To save in result/, update the scripts’ output paths (e.g., ../result/...).
+- CSV logs and plots are saved to the current working directory (default: code/).
+  To save in result/, update the scripts’ output paths (e.g., ../result/...).
 
 ### 4. Save plots manually
-To export figures:
-```r
-ggsave("../result/figure_name.png", width = 9, height = 6, dpi = 300)
+- To export figures:
+  ```r
+  ggsave("../result/figure_name.png", width = 9, height = 6, dpi = 300)
+
 
 Reproducibility Notes
 Each sample is normalized individually (relative growth rate).
