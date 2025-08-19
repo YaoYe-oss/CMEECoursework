@@ -7,7 +7,7 @@ The analysis consists of two parts:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 Msc Final project/
 │
@@ -111,8 +111,6 @@ Rscript "pH-growth rate results analysis.R"
 Rscript "pH-growth rate parameters analysis.R"
 From R / RStudio:
 
-r
-
 setwd("Msc Final project/code")
 source("pH-growth rate results analysis.R")
 source("pH-growth rate parameters analysis.R")
@@ -123,8 +121,6 @@ To save in result/, update the scripts’ output paths (e.g., ../result/...).
 
 4. Save plots manually
 To export figures:
-
-r
 
 ggsave("../result/figure_name.png", width = 9, height = 6, dpi = 300)
 Reproducibility Notes
