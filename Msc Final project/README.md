@@ -48,16 +48,19 @@ Msc Final project/
 ## Models Used
 
 - **Gaussian**:  
+```r
   \[
   \mu(pH) = \mu_{max}\,\exp\!\left(-\frac{(pH - pH_{opt})^2}{2\sigma^2}\right)
   \]
 
 - **Brière** (for model comparison only):  
+```r
   \[
   a \cdot pH \cdot (pH-T_{min}) \cdot \sqrt{\max(T_{max}-pH,0)}
   \]
 
 - **CPM** (Cardinal Parameter Model):  
+```r
   \[
   A_{max}\,\frac{(pH-pH_{min})(pH-pH_{max})}
   {(pH-pH_{min})(pH-pH_{max})-(pH-pH_{opt})^2}
@@ -105,12 +108,12 @@ Msc Final project/
 Both scripts assume the working directory is code/ (because they read ../data/...).
 
 From command line:
-
+```r
 cd "Msc Final project/code"
 Rscript "pH-growth rate results analysis.R"
 Rscript "pH-growth rate parameters analysis.R"
 From R / RStudio:
-
+```r
 setwd("Msc Final project/code")
 source("pH-growth rate results analysis.R")
 source("pH-growth rate parameters analysis.R")
@@ -121,7 +124,7 @@ To save in result/, update the scripts’ output paths (e.g., ../result/...).
 
 4. Save plots manually
 To export figures:
-
+```r
 ggsave("../result/figure_name.png", width = 9, height = 6, dpi = 300)
 Reproducibility Notes
 Each sample is normalized individually (relative growth rate).
