@@ -48,19 +48,16 @@ Msc Final project/
 ## Models Used
 
 - **Gaussian**:  
-```r
   \[
   \mu(pH) = \mu_{max}\,\exp\!\left(-\frac{(pH - pH_{opt})^2}{2\sigma^2}\right)
   \]
 
 - **Brière** (for model comparison only):  
-```r
   \[
   a \cdot pH \cdot (pH-T_{min}) \cdot \sqrt{\max(T_{max}-pH,0)}
   \]
 
 - **CPM** (Cardinal Parameter Model):  
-```r
   \[
   A_{max}\,\frac{(pH-pH_{min})(pH-pH_{max})}
   {(pH-pH_{min})(pH-pH_{max})-(pH-pH_{opt})^2}
