@@ -7,27 +7,6 @@ The analysis consists of two parts:
 
 ---
 
-## Project Structure
-
-Msc Final project/
-│
-├─ code/ # R scripts
-│ ├─ pH-growth rate results analysis.R
-│ ├─ pH-growth rate parameters analysis.R
-│ └─ .gitkeep
-│
-├─ data/ # Input data
-│ ├─ pH-growth rate dataset.xlsx
-│ └─ .gitkeep
-│
-├─ result/ # Suggested folder for plots/tables (outputs)
-│ └─ (generated after running scripts)
-│
-└─ README.md
-
-
----
-
 ## Dataset
 
 - **File**: `data/pH-growth rate dataset.xlsx`  
@@ -44,7 +23,6 @@ Msc Final project/
 >   - Otherwise → `Neutrophile`.
 
 ---
-
 
 ## Scripts
 
@@ -105,10 +83,10 @@ Msc Final project/
   ggsave("../result/figure_name.png", width = 9, height = 6, dpi = 300)
 
 
-Reproducibility Notes
-Each sample is normalized individually (relative growth rate).
-CPM requires ≥ 4 distinct pH points and a pH span ≥ 0.75.
-Model fitting failures are logged in CSV outputs.
+## Reproducibility Notes
+   Each sample is normalized individually (relative growth rate).
+   CPM requires ≥ 4 distinct pH points and a pH span ≥ 0.75.
+   Model fitting failures are logged in CSV outputs.
 
 
 
