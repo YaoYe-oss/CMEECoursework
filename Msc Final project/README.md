@@ -45,27 +45,6 @@ Msc Final project/
 
 ---
 
-## Models Used
-
-- **Gaussian**:  
-  \[
-  \mu(pH) = \mu_{max}\,\exp\!\left(-\frac{(pH - pH_{opt})^2}{2\sigma^2}\right)
-  \]
-
-- **Brière** (for model comparison only):  
-  \[
-  a \cdot pH \cdot (pH-T_{min}) \cdot \sqrt{\max(T_{max}-pH,0)}
-  \]
-
-- **CPM** (Cardinal Parameter Model):  
-  \[
-  A_{max}\,\frac{(pH-pH_{min})(pH-pH_{max})}
-  {(pH-pH_{min})(pH-pH_{max})-(pH-pH_{opt})^2}
-  \]
-
-- **Loess**: Non-parametric smoothing (for visualization).
-
----
 
 ## Scripts
 
@@ -101,6 +80,7 @@ Msc Final project/
 - Required packages:
   ```r
   install.packages(c("tidyverse", "minpack.lm", "patchwork", "readxl", "forcats"))
+
 2. Running the scripts
 Both scripts assume the working directory is code/ (because they read ../data/...).
 
@@ -109,11 +89,13 @@ From command line:
 cd "Msc Final project/code"
 Rscript "pH-growth rate results analysis.R"
 Rscript "pH-growth rate parameters analysis.R"
+
 From R / RStudio:
 ```r
 setwd("Msc Final project/code")
 source("pH-growth rate results analysis.R")
 source("pH-growth rate parameters analysis.R")
+
 3. Outputs
 CSV logs and plots are saved to the current working directory (default: code/).
 
@@ -123,6 +105,7 @@ To save in result/, update the scripts’ output paths (e.g., ../result/...).
 To export figures:
 ```r
 ggsave("../result/figure_name.png", width = 9, height = 6, dpi = 300)
+
 Reproducibility Notes
 Each sample is normalized individually (relative growth rate).
 
