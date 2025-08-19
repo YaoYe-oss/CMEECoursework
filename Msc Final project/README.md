@@ -81,7 +81,7 @@ Msc Final project/
   ```r
   install.packages(c("tidyverse", "minpack.lm", "patchwork", "readxl", "forcats"))
 
-2. Running the scripts
+### 2. Running the scripts
 Both scripts assume the working directory is code/ (because they read ../data/...).
 From command line:
 ```r
@@ -95,11 +95,11 @@ setwd("Msc Final project/code")
 source("pH-growth rate results analysis.R")
 source("pH-growth rate parameters analysis.R")
 
-3. Outputs
+### 3. Outputs
 CSV logs and plots are saved to the current working directory (default: code/).
 To save in result/, update the scripts’ output paths (e.g., ../result/...).
 
-4. Save plots manually
+### 4. Save plots manually
 To export figures:
 ```r
 ggsave("../result/figure_name.png", width = 9, height = 6, dpi = 300)
